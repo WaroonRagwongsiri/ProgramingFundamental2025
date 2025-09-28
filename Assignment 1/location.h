@@ -6,7 +6,7 @@
 /*   By: waroonwork@gmail.com <WaroonRagwongsiri    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/30 15:12:33 by waroonwork@       #+#    #+#             */
-/*   Updated: 2025/06/30 16:11:41 by waroonwork@      ###   ########.fr       */
+/*   Updated: 2025/09/29 02:06:44 by waroonwork@      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,15 +14,18 @@
 # define LOCATION_H
 
 # include <stdio.h>
+# include <stdlib.h>
+# include <string.h>
 
-# define BUFFER_SIZE 1000000
+// Split
+char	**ft_split(char const *s, char c);
+size_t	count_word_split(char const *s, char c);
+void	*free_arr(char **arr);
+char	**process_split(char const *s, char c, char **new, size_t i);
+void	inner_loop_split(char const *s, size_t last_index_sep,\
+			size_t index_sep, char *new);
 
-typedef struct s_location
-{
-	int		no;
-	double	lat;
-	double	lon;
-	char	place[BUFFER_SIZE];
-}	t_location;
+# define BUFFER_SIZE 1024
+# define CMD_LIM 1000
 
 #endif

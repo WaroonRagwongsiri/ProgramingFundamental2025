@@ -1,0 +1,1 @@
+curl -s "https://nominatim.openstreetmap.org/reverse?format=json&lat=$1&lon=$2" | jq '.display_name' > out_curl

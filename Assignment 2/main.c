@@ -6,14 +6,26 @@
 /*   By: waroonwork@gmail.com <WaroonRagwongsiri    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/17 13:12:26 by waroonwork@       #+#    #+#             */
-/*   Updated: 2025/09/29 00:24:10 by waroonwork@      ###   ########.fr       */
+/*   Updated: 2025/09/29 01:41:49 by waroonwork@      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
+#include <stdlib.h>
 #include <string.h>
+#include <errno.h>
+
+void	booyer_moore(char *text, char *data);
 
 int	main(int ac, char **av)
+{
+	if (ac != 3)
+		return (printf("ac != 2"), 1);
+	booyer_moore(av[2], av[1]);
+	return (0);
+}
+
+void	booyer_moore(char *text, char *data)
 {
 	FILE	*fp;
 	char	buffer[1024];
@@ -21,12 +33,14 @@ int	main(int ac, char **av)
 	char	*find;
 	int		line;
 
-	if (ac != 3)
-		return (printf("ac != 2"), 1);
-	fp = fopen(av[1], "r");
+
+	fp = fopen(data, "r");
 	if (!fp)
-		return (printf("fp error"), 1);
-	word = av[2];
+	{
+		perror("fp error");
+		exit(errno);
+	}
+	word = text;
 	line = 1;
 	while (!feof(fp))
 	{
