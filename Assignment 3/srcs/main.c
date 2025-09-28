@@ -6,7 +6,7 @@
 /*   By: waroonwork@gmail.com <WaroonRagwongsiri    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/28 21:51:00 by waroonwork@       #+#    #+#             */
-/*   Updated: 2025/09/28 23:54:15 by waroonwork@      ###   ########.fr       */
+/*   Updated: 2025/09/29 00:05:59 by waroonwork@      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ int	main(int argc, char **argv)
 	}
 	height = map_height(argv[1]);
 	parse_map(argv[1], width, map);
-	s_point = find_point(map, width, height, 's');
+	s_point = find_point(map, width, height);
 	printf("wid :%d, hei : %d\n", width, height);
 	printf("row :%d, col : %d\n", s_point / width, s_point % width);
 	solver(map, width, height, s_point);

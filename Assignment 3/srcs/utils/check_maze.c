@@ -27,6 +27,7 @@ int	map_width(char *map_file)
 	{
 		fgets(buffer, sizeof(buffer), fp);
 		line_len = strlen(buffer);
+		
 		if (buffer[line_len - 1] == '\n')
 			line_len -= 1;
 		if (width == 0)
