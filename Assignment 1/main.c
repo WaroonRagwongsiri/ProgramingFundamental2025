@@ -6,7 +6,7 @@
 /*   By: waroonwork@gmail.com <WaroonRagwongsiri    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/30 15:26:22 by waroonwork@       #+#    #+#             */
-/*   Updated: 2025/09/29 03:15:53 by waroonwork@      ###   ########.fr       */
+/*   Updated: 2025/09/29 16:45:06 by waroonwork@      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,9 +55,11 @@ int	main(void)
 			place[strlen(place) - 1] = '\0';
 			fprintf(fp_out, "%s", line);
 			fprintf(fp_out, "%s,\n", place);
+			fclose(fp_curl);
 		}
 		else
 			fprintf(fp_out, "%s", line);
+		free_arr(data);
 	}
-	return (0);
+	return (fclose(fp_csv), fclose(fp_out), 0);
 }
