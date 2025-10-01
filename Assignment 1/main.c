@@ -6,7 +6,7 @@
 /*   By: waroonwork@gmail.com <WaroonRagwongsiri    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/30 15:26:22 by waroonwork@       #+#    #+#             */
-/*   Updated: 2025/10/01 13:03:25 by waroonwork@      ###   ########.fr       */
+/*   Updated: 2025/10/01 13:57:22 by waroonwork@      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,8 @@ int	main(void)
 	fp_out = fopen("68011008", "w");
 	if (!fp_csv || !fp_out)
 		return (fclose(fp_csv), fclose(fp_out), 1);
-	fgets(line, sizeof(line), fp_csv);
+	if (!fgets(line, sizeof(line), fp_csv))
+		return (fclose(fp_csv), fclose(fp_out), 1);
 	fprintf(fp_out, "%s", line);
 	while (!feof(fp_csv))
 	{
