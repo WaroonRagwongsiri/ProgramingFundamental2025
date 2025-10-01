@@ -6,7 +6,7 @@
 /*   By: waroonwork@gmail.com <WaroonRagwongsiri    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/30 15:26:22 by waroonwork@       #+#    #+#             */
-/*   Updated: 2025/09/29 16:45:06 by waroonwork@      ###   ########.fr       */
+/*   Updated: 2025/10/01 13:03:25 by waroonwork@      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,6 @@ int	main(void)
 			strcat(cmd, data[1]);
 			strcat(cmd, " ");
 			strcat(cmd, data[2]);
-			strcat(cmd, " > out_curl");
 			system(cmd);
 			fp_curl = fopen("out_curl", "r");
 			if (!fp_curl)
