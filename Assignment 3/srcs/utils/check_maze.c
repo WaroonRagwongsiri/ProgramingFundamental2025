@@ -6,7 +6,7 @@
 /*   By: waroonwork@gmail.com <WaroonRagwongsiri    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/28 21:57:14 by waroonwork@       #+#    #+#             */
-/*   Updated: 2025/09/28 22:41:48 by waroonwork@      ###   ########.fr       */
+/*   Updated: 2025/10/01 14:26:23 by waroonwork@      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,9 +25,9 @@ int	map_width(char *map_file)
 	width = 0;
 	while (!feof(fp))
 	{
-		fgets(buffer, sizeof(buffer), fp);
+		if (!fgets(buffer, sizeof(buffer), fp))
+			return (fclose(fp), 0);
 		line_len = strlen(buffer);
-		
 		if (buffer[line_len - 1] == '\n')
 			line_len -= 1;
 		if (width == 0)
